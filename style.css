@@ -6,18 +6,15 @@
 a{
     text-decoration: none;
 }
-body{
-    overflow-x:hidden ;
-}
 header{
-    height: 100vh;
+    height: 900px;
     width: 100%;
     background-image: url("images/header.jpg");
     background-size: cover;
 }
 .navbar{
     height:100px;
-    width: 100vw;
+    width: 100%;
     text-transform: uppercase;
     font-family: Candara Light;
     background-color: rgb(255, 255, 255);
@@ -32,7 +29,7 @@ header{
     align-items: center;
 }
 .navbar>ol>li{
-    display: inline-block;
+    display: block;
     width: 100px;
 }
 .navbar .logo{
@@ -91,7 +88,7 @@ header{
     margin: 20px;
 }
 .second{
-    height: 100vh;
+    height: auto;
     width: 100%;
     display: grid;
     grid-auto-flow: column;
@@ -166,14 +163,16 @@ header{
     transition: 0.3s ease;
 }
 .third{
-    height: 100vh;
+    height: auto;
     text-align: center;
 }
 .third .cards{
     display: grid;
     grid-auto-flow: column;
     justify-items: center;
+    width: 1200px;
     transform: translateY(150px);
+    margin: 0 auto;
 }
 .third img{
     height: 200px;
@@ -195,4 +194,68 @@ header{
 .third h1{
     font-size: 50px;
     transform: translateY(125px);
+}    
+body{
+    overflow-x:hidden ;
+}
+@media screen and (max-width:1200px){
+    header .navbar{
+        height: auto;
+        grid-auto-flow: row;
+        justify-items: center;
+    }
+    header .navbar .logo{
+        transform: translate(-45px,0);
+    }
+    header .navbar ol{
+        flex-flow: column;
+    }
+    .second{
+        grid-auto-flow: row;
+        width: 100%;
+    }
+    .third .cards{
+        grid-auto-flow: row;
+        transform: translateY(200px);
+        width: auto;
+    }
+    
+    .sec-img .label{
+        transform: translate(0,0);
+        position: relative;
+        bottom: calc(50% + 40px);
+        left: calc(50% - 80px);
+    }
+    .sec-img img{
+        position: relative;
+        left: calc(50% - 250px);
+    }
+    .sec-content{
+        width: 100%;
+    }
+    .sec-content h1{
+        width: 90vw;
+        transform: translate(50px,-40px);
+        text-align: justify;
+    }
+    .sec-content .line{
+        position: relative;
+        top: 40px;
+        left:10%;
+    }
+    .sec-content p{
+        position: relative;
+        left: 50px;
+        width: calc(80%);
+        top: 30px;
+    }
+    .sec-content ol{
+        position: relative;
+        left: 50px;
+        top: 20px;
+    }
+    .sec-content a{
+        position: relative;
+        left: calc(50% - 85px);
+    }
 }
